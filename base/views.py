@@ -1,9 +1,14 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
+rooms = [
+    {'id':1, 'name': 'Learn Python'}
+]
+
 # Create your views here.
 def home(request):
-    return render(request,'home.html')
+    context = {'rooms': rooms}
+    return render(request,'base/home.html',context)
 
 def room(request):
-    return render(request,'room.html')
+    return render(request,'base/room.html')
